@@ -20,7 +20,7 @@ export default function Photo({item}) {
 }
 
 export const getServerSideProps = async (context) => {
-	const response = await fetch('http://localhost:8080');
+	const response = await fetch('https://jsonplaceholder.typicode.com/photos?_start=1&_end=10');
 	const photoList = await response.json();
 	const photoItems = photoList.filter((item) => item.id == context.query.id);
 

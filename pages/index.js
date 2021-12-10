@@ -33,7 +33,7 @@ export default function Home({photoList}) {
 }
 
 export const getServerSideProps = async () => {
-	const response = await fetch('http://localhost:8080/');
+	const response = await fetch('https://jsonplaceholder.typicode.com/photos?_start=1&_end=10');
 	const photoList = await response.json();
 
 	return {
